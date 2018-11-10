@@ -27,3 +27,6 @@ colorscheme solarized
 
 set number
 set relativenumber
+
+set path+=\**
+set wildmenu
