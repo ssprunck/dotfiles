@@ -8,5 +8,9 @@ for FILE in $(find . -name '*.symlink'); do
 	FILENAME=$(echo "$FILENAME" | cut -f 1 -d '.')
 
 	# create dotfile in home directory
-	cp -R $FILE ~/.$FILENAME
+    if [ ! -d "$FILE" ] && [ ! -f "$FILE" ]; then
+    	cp -R $FILE ~/.$FILENAME
+    else
+        echo "File / Directory $FILENAME exists"
+    fi
 done
