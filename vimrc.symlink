@@ -1,32 +1,46 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()
 
+" Colors
 syntax enable
-
 set background=dark
 colorscheme solarized
 
+" Tabs & Spaces
+set autoindent
+set tabstop=4       " number of visual spaces per TAB
+set softtabstop=4   " number of spaces in tab when editing
+set shiftwidth=4
+set expandtab       " tabs are spaces
+set smarttab
+set backspace=indent,eol,start
+
+" UI Config
+filetype plugin indent on
 set number
 set relativenumber
-
-set path+=\**
 set wildmenu
+set lazyredraw      " redraw only when we need to.
+set showmatch       " highlight matching [{()}]
+set laststatus=2
+set visualbell
+
+" Searching
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+set path+=\**
+
+set whichwrap+=<,>,h,l,[,]
+set encoding=utf-8
+set autoread
