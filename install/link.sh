@@ -1,16 +1,22 @@
 #!/bin/bash
 
-for FILE in $(find . -name '*.symlink'); do
+RED='\e[31m'
+GREEN='\e[32m'
+NC='\e[39m'
+
+for FILE in $(find ~/dotfiles -name '*.symlink'); do
+
 	# get filename
 	FILENAME=${FILE##*/}
 
 	# remove '.symlink' from filename
-	FILENAME=$(echo "$FILENAME" | cut -f 1 -d '.')
+	FILENAME=${FILENAME%.symlink}
 
 	# create dotfile in home directory
-    if [ ! -d "$FILENAME" ] && [ ! -f "$FILENAME" ]; then
-    	cp -R $FILE ~/.$FILENAME
+    if [ -f $FILE ] && [ ! -f ~/.$FILENAME ]; then
+    	cp $FILE ~/.$FILENAME
+        echo "${GREEN}Copying $FILE to ~/.$FILENAME${NC}"
     else
-        echo "File / Directory $FILENAME exists"
+        echo "${RED}Skipping ~/.$FILENAME, already exists${NC}"
     fi
 done
