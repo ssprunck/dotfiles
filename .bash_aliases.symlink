@@ -1,0 +1,12 @@
+# Modify prompt
+source /etc/bash_completion.d/git-prompt
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWUPSTREAM="auto"
+PS1=$PS1'$(__git_ps1 "(%s) ")'
+
+# Upgrade/update system
+alias upgrade='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove'
+
+# quick access to project folder
+alias mtu='cd /mnt/c/dev/mtucommonality/src/Pec/Bundle/MtuCommonalityBundle'

@@ -13,10 +13,10 @@ for FILE in $(find ~/dotfiles -name '*.symlink'); do
 	FILENAME=${FILENAME%.symlink}
 
 	# create dotfile in home directory
-    if [ -f $FILE ] && [ ! -f ~/.$FILENAME ]; then
-    	cp $FILE ~/.$FILENAME
-        echo "${GREEN}Copying $FILE to ~/.$FILENAME${NC}"
+    if [ -f $FILE ] && [ ! -f ~/$FILENAME ]; then
+    	cp $FILE ~/$FILENAME
+        echo "${GREEN}Copying $FILE to ~/$FILENAME${NC}"
     else
-        echo "${RED}Skipping ~/.$FILENAME, already exists${NC}"
+        echo "${RED}Skipping ~/$FILENAME, already exists${NC}"
     fi
 done
