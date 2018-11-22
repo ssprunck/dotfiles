@@ -35,6 +35,7 @@ set lazyredraw      " redraw only when we need to.
 set showmatch       " highlight matching [{()}]
 set laststatus=2
 set visualbell
+set nowrap
 au BufRead,BufNewFile *.html.twig set filetype=html
 au BufRead,BufNewFile *.config set filetype=xml
 
