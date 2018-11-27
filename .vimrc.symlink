@@ -13,6 +13,18 @@ Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 
+" Move arround splits without "w"
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+" Map leader key to ','
+let mapleader = ","
+
+" Clear search highlighting
+nnoremap <leader><space> :noh<CR>
+
 " Colors
 syntax enable
 set background=dark
@@ -29,6 +41,7 @@ set backspace=indent,eol,start
 " UI Config
 filetype plugin indent on
 set number
+
 " set relativenumber " disabled until they fix the memory issue
 set wildmenu
 set lazyredraw      " redraw only when we need to.
