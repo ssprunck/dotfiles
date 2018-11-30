@@ -10,4 +10,5 @@ PS1+='\[\033[0;32m\]$(__git_ps1 "(%s) ")\[\033[00m\]\n\$ '
 alias upgrade='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove'
 
 # quick access to project folder
+alias app='cd /mnt/c/dev/mtucommonality/'
 alias mtu='cd /mnt/c/dev/mtucommonality/src/Pec/Bundle/MtuCommonalityBundle'
