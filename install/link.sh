@@ -13,7 +13,7 @@ for FILE in $(find ~/dotfiles -name '*.symlink'); do
 	FILENAME=${FILENAME%.symlink}
 
 	# create dotfile in home directory
-    if [ -f $FILE ] && [ ! -f ~/$FILENAME ]; then
+    if [ -f $FILE ] && [ ! -f ~/$FILENAME ] || [ -n "$1" ] && [ "$1" = "--force" ]; then
     	cp $FILE ~/$FILENAME
         echo "${GREEN}Copying $FILE to ~/$FILENAME${NC}"
     else
