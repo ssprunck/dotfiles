@@ -8,14 +8,12 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'universal-ctags/ctags'
+Plugin 'scrooloose/syntastic'
 Plugin 'beyondwords/vim-twig'
 
 call vundle#end()
 
-" Move arround splits without "w"
+" Move arround splits
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -61,8 +59,10 @@ set whichwrap+=<,>,h,l,[,]
 set encoding=utf-8
 set autoread
 
-" Nerdtree
-nnoremap <c-n> :NERDTreeToggle<CR>
+" Directory browsing
+nnoremap <C-n> :Vexplore<CR>
+let g:netrw_liststyle = 3
+let g:netrw_winsize = 25
 
 " Skeletons
 autocmd BufNewFile *.php 0r ~/.vim/skeletons/php/head
