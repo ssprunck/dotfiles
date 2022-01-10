@@ -12,3 +12,9 @@ alias upgrade='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get 
 # quick access to project folder
 alias app='cd /mnt/c/dev/mtucommonality/'
 alias mtu='cd /mnt/c/dev/mtucommonality/src/Pec/Bundle/MtuCommonalityBundle'
+
+# vw stuff
+alias deployPalmela='bash /mnt/d/dev/vw/rtp/dpp-bcs-deployment-factory/pipeline/upload.sh res'
+alias getToken='~/./lz_cli'
+
+alias init='upgrade && sudo service mysql start && sudo service apache2 start'
