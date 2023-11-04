@@ -1,18 +1,6 @@
 set nocompatible
 filetype off
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/syntastic'
-Plugin 'beyondwords/vim-twig'
-
-call vundle#end()
-
 " Move arround splits
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
@@ -27,8 +15,6 @@ nnoremap <leader><space> :noh<CR>
 
 " Colors
 syntax enable
-set background=dark
-colorscheme solarized
 
 " Tabs & Spaces
 set autoindent
@@ -53,7 +39,6 @@ au BufRead,BufNewFile *.config set filetype=xml
 " Searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
-set path+=\**
 
 set whichwrap+=<,>,h,l,[,]
 set encoding=utf-8
